@@ -110,7 +110,7 @@ can be seen below.
 
 To remedy the issues described above, a second pass was taken at the detector. This time the
 detector became more complex. The source code for this can be seen
-[here](https://github.com/MatthewMArnold/CSE-455-Final-Project/tree/master/src).
+[here](https://gitlab.cs.washington.edu/mma35/cse-455-final-project/-/tree/master/classical/src).
 
 Instead of attempting to find entire petals using contour heirarchies, we next focused on detecting
 individual components of the petal--the individual plate, the petals, the center of the rune game.
@@ -227,7 +227,7 @@ For the classical CV detector, we relied extensively on hand-picked video clips 
 rune game in an almost first-person view that are accessible on
 [twitch](https://www.twitch.tv/robomaster). A subset of the data used to hand-tune the classifiers
 many parameters are available
-[here](https://gitlab.cs.washington.edu/mma35/cse-455-final-project/-/tree/master/test-footage).
+[here](https://gitlab.cs.washington.edu/mma35/cse-455-final-project/-/tree/master/classical/test-footage).
 
 ### Reflection/Comparing our Work
 
