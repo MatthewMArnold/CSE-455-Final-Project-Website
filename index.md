@@ -17,6 +17,10 @@ Discussion
     Are there next steps you would take if you kept working on the project?
     How does your approach differ from others? Was that beneficial? -->
 
+## Final Video
+
+[![Final Video](resources/final_pres.png)](TODO)
+
 ## The Problem
 
 The RoboMaster robotics competition is an arena style competition where ~400 universities from
