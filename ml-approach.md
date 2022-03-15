@@ -23,13 +23,14 @@ potentially lead to identifying any glowing blue/red rectangular object as the t
 means our model would not be robust.
 
 ## Approach
+
 We decided to test in particular two different types of models. A CenterNet-like model, which has
 been used with great success by our team for other tasks in the "RoboMaster" competition and a Fully
 Convolutional One-Stage Object Detection model which is based off of previous [open-source
 works](https://github.com/tianzhi0549/FCOS).
 
-
 ## Findings
+
 After changing hyperparameters such as the number of layers, the types of Nodes, decays, optimizers,
 and activation functions, we could not detect significant change between our model and the model
 worked on by our colleagues. It seems as if the type of model that we are using has minimal effect

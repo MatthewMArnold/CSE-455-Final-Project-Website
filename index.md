@@ -74,4 +74,5 @@ other software.
 
 ### Reflection/Comparing our Work
 
-TODO
+We can qualitativly compare results of the two detection algorithms on similar videos. You can see a
+video of the classical detector [here](https://youtu.be/6N2wwLwqqjg).
