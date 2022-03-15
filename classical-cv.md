@@ -239,8 +239,6 @@ separately and got quite good results on both.
 * [First person robot footage
   parameters](https://gitlab.cs.washington.edu/mma35/cse-455-final-project/-/tree/master/classical/metadata)
 
-### Reflection/Comparing our Work
-
 ## Miscellaneous OpenCV-related Discussion
 
 We chose to implement this project in C++ because of the speed it afforded compared to Python. One
