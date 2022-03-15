@@ -219,15 +219,25 @@ We can also run this algorithm on videos as well and qualitatively review the re
 
 ![](./resources/red_1_result.gif)
 
+For a significantly longer clip, see [this YouTube video](https://www.youtube.com/watch?v=6N2wwLwqqjg).
+
 More discussion on the quality of the results can be found on the [home page](index.html).
 
 ## Datasets
 
 For the classical CV detector, we relied extensively on hand-picked video clips that display the
 rune game in an almost first-person view that are accessible on
-[twitch](https://www.twitch.tv/robomaster). A subset of the data used to hand-tune the classifiers
-many parameters are available
+[twitch](https://www.twitch.tv/robomaster), as well as some private footage taken from the
+perspective of a robot. A subset of the data used to hand-tune the classifiers many parameters are
+available
 [here](https://gitlab.cs.washington.edu/mma35/cse-455-final-project/-/tree/master/classical/test-footage).
+The Twitch stream footage has significantly different image characteristics (reds are very red,
+there is less exposure) than the robot footage, so we tuned the algorithm for both scenarios
+separately and got quite good results on both.
+* [TwitchTV configuration
+  parameters](https://gitlab.cs.washington.edu/mma35/cse-455-final-project/-/tree/master/classical/metadata_save)
+* [First person robot footage
+  parameters](https://gitlab.cs.washington.edu/mma35/cse-455-final-project/-/tree/master/classical/metadata)
 
 ### Reflection/Comparing our Work
 

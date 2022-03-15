@@ -1,21 +1,8 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
 title: Home
 layout: template
 filename: index.html
 ---
-
-<!-- Problem description
-Previous work (including what you used for your method i.e. pretrained models)
-Your approach
-Datasets
-Results
-Discussion
-    What problems did you encounter?
-    Are there next steps you would take if you kept working on the project?
-    How does your approach differ from others? Was that beneficial? -->
 
 ## Final Video
 
@@ -51,6 +38,17 @@ life on a platform that is as close to the competition as possible. While a clas
 does not have great transferability, it is unlikely that ML approaches that are overtrained on a
 dataset will work well on a dataset the model has not encountered before.
 
+Another more fundamental problem we encountered was that quantitatively comparing the results of
+classical and ML detection algorithms is non-obvious. Much of our comparisons were performed
+qualitatively, which isn't unreasonable for this particular detection problem, but it would be
+optimal to be able to directly compare the classification results of both algorithms since this
+would be much faster than comparing individual frames by hand. The main blocking issue was that the
+classical algorithm was written in C++ and the ML one in Python. While we could add OpenCV bindings
+to our C++ code (see next steps), a workaround we found was to save detection locations for each
+frames and then compute the mean squared error between the labeled rune game detections and from
+what the rune game outputs from the model. Using this we could better compare the accuracy of each
+algorithm.
+
 ### Next Steps
 
 There are a lot of improvements and future work we would like to do on this project. First off, we
@@ -58,25 +56,37 @@ would like to run the rune game detectors we have developed on a real rune game 
 using images from previous competitions. This will allow us to find more weaknesses in the detectors
 and will help us better tune them.
 
+One problem we did not address is the affect of motion blur on detection. As the camera moves
+rapidly, the geometry of the rune changes significantly causing both of the detectors to lose
+detection for a short period. We believe we can add post-processing logic after the detector to
+handle these misdetections. This would involve adding object permanence to the detected rune game
+features in the form of Kalman filtering or even more basic logic (for example, if you just saw a
+plate in the middle of the image and the next frame it is gone, it likely still exists).
+
 We would also like to combine ML and classical techniques as described in "Detection and
 Classification of Geometric Shape Objects for Industrial Applications". We believe this technique of
 classifying binarized images would work well for the rune game detection problem. The binarization
 portion of the pipeline could be quickly tuned to perform the correct color/brightness thresholding
 necessary to generate a reasonably binarized image, and the ML model would not be affected by
-lighting differences and would be more resiliant than manually performing geometric thresoling to
-pick out different features. Furthremore, the ML model would be directly transferrible between a
-test environment and the actual competition environment. The only reason we did not take this
-approach was we did not have labeled binarized images that we could use to train an ML model and the
-time constraint inhibited us from labeling a bunch of data.
+lighting differences and would be more resilient than manually performing geometric thresholding to
+pick out different features. Furthermore, the ML model would be directly transferable between a test
+environment and the actual competition environment. The only reason we did not take this approach
+was we did not have labeled binarized images that we could use to train an ML model and the time
+constraint inhibited us from labeling a bunch of data.
 
 Another future improvement we would like to make to the classical CV pipeline is add python bindings
-to the detector such that it can rune in a python project. This will improve the extensibility of
-the project and allow for interchangability between the ML and classical CV pipelines when we
-integrate one of the detectors into our vision pipeline. This is somewhat outside the scope of this
-project but is going to be important moving forward as we integrate the rune game detector with
-other software.
+to the detector such that it can run in a python project. This will improve the extensibility of the
+project and allow for interchangability between the ML and classical CV pipelines when we integrate
+one of the detectors into our vision pipeline. This is somewhat outside the scope of this project
+but is going to be important moving forward as we integrate the rune game detector with other
+software that we have written in Python.
 
 ### Reflection/Comparing our Work
 
 We can qualitativly compare results of the two detection algorithms on similar videos. You can see a
 video of the classical detector [here](https://youtu.be/6N2wwLwqqjg).
+
+Our classical approach greatly diverged from previous work on this detection problem. While the
+accuracy of the ML model and classical CV algorithm were similar, we believe the ability to quickly
+tune the classical CV algorithm gives it a unique advantage over the ML model. As an example of
+this, we tuned the algorithm on Twitch match footage 
