@@ -83,10 +83,29 @@ software that we have written in Python.
 
 ### Reflection/Comparing our Work
 
-We can qualitativly compare results of the two detection algorithms on similar videos. You can see a
-video of the classical detector [here](https://youtu.be/6N2wwLwqqjg).
+Our classical approach greatly diverged from previous work on this detection problem, which had only
+been explored using ML. This project has greatly expanded our knowledge of the rune game detection
+problem and gives us and others a better understanding of how classical and ML approaches compare.
 
-Our classical approach greatly diverged from previous work on this detection problem. While the
-accuracy of the ML model and classical CV algorithm were similar, we believe the ability to quickly
-tune the classical CV algorithm gives it a unique advantage over the ML model. As an example of
-this, we tuned the algorithm on Twitch match footage 
+We can qualitatively compare results of the two detection algorithms on similar videos.
+
+Classical CV:
+
+![](./resources/red_1_result.gif)
+
+ML: 
+
+![](./resources/red1_result_ml.gif)
+
+While the accuracy of the ML model and classical CV algorithm were similar on some data, we believe
+the ability to quickly tune the classical CV algorithm gives it a unique advantage over the ML
+model. As an example of this, we tuned the algorithm on Twitch match footage then re-tuned it on
+first person robot footage, and both have similar accuracy. When training our ML model, we noticed
+that since we had more red plate data, we overfitted to red plates, whereas the classical detector
+worked just as well on blue plates as it did on red plates. Though there is not anything inherently
+wrong with the trained ML model, we are hindered by our inability to find a quality dataset. Since
+none exists, we have to train models on the limited dataset we have, which makes a purely ML
+approach challenging. Instead, we believe that exploring ways to perform image preprocessing and
+extracting particular features that can then be thrown into an ML model is a better way to go. This
+will eliminate color/lighting biases in the data and will remove the weakest part of the classical
+CV algorithm--hand tuning geometry thresholds.

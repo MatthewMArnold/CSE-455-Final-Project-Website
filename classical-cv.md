@@ -219,7 +219,9 @@ We can also run this algorithm on videos as well and qualitatively review the re
 
 ![](./resources/red_1_result.gif)
 
-For a significantly longer clip, see [this YouTube video](https://www.youtube.com/watch?v=6N2wwLwqqjg).
+For a significantly longer clip:
+
+[![](./resources/rune_game_detector_vid.PNG)](https://www.youtube.com/watch?v=6N2wwLwqqjg).
 
 More discussion on the quality of the results can be found on the [home page](index.html).
 
