@@ -6,7 +6,7 @@ filename: index.html
 
 ## Final Video
 
-[![Final Video](resources/final_pres.png)](TODO)
+[![Final Video](resources/final_pres.png)](https://youtu.be/osdaNI9bpJQ)
 
 ## The Problem
 
